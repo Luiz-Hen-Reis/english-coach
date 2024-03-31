@@ -40,13 +40,12 @@ export default async function getAnswer(question: string) {
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const data = await response.json();
-
         
-        const answer = data;
+        const answer = data.choices[0].message;
     
         const fullAnswer = {
-          role: "assistant",
-          content: answer,
+          role: answer.role,
+          content: answer.content,
         };
 
         conversationHistory.push(fullAnswer);
