@@ -8,4 +8,8 @@
         color: #FFFFFF;
         box-sizing: border-box;
     }
+
+    .app-green-color {
+        background-color: #169C84;
+    }
 }
