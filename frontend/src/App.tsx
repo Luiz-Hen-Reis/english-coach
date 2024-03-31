@@ -29,9 +29,12 @@ export default function App() {
   return (
     <div className="flex flex-col justify-between items-center h-full py-8 lg:max-w-[1024px] lg:m-auto">
       <Header />
-      <main className="flex-1 w-full overflow-y-auto my-2">
-        <Chat messages={messages} />
-      </main>
+      {
+        messages.length === 0 ? <div className='text-white/60'>Ask anything about english and I will answer you</div> :
+        <main className="flex-1 w-full overflow-y-auto my-2">
+          <Chat messages={messages} />
+        </main>
+      }
       <Footer handleQuestion={handleQuestion} question={question} handleSubmit={sendQuestion} />
     </div>
   )
