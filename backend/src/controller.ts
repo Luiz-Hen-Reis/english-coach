@@ -9,7 +9,7 @@ export async function chat(req: Request, res: Response) {
 
         const answer = await getAnswer(question);
 
-        res.status(200).json({ text: answer });
+        res.status(200).json({ role: answer.role, text: answer.content });
 
     } catch (error) {
         res.status(500).json({ error: "Internal server error." })
