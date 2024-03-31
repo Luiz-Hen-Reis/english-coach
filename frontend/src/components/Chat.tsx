@@ -1,20 +1,16 @@
+import { MessageType } from "../App";
 import Message from "./Message";
 
-export default function Chat() {
+type Props = {
+  messages: MessageType[];
+}
+
+export default function Chat({ messages }: Props) {
   return (
     <div className="flex flex-col space-y-4 px-6">
-        <Message author="User" text="Olá!" />
-        <Message author="Bot" text="Olá! Como posso ajudá-lo hoje?" />
-        <Message author="User" text="Estou com uma dúvida sobre inglês." />
-        <Message author="Bot" text="Claro, estou aqui para ajudar." />
-        <Message author="User" text="Olá!" />
-        <Message author="Bot" text="Olá! Como posso ajudá-lo hoje?" />
-        <Message author="User" text="Estou com uma dúvida sobre inglês." />
-        <Message author="Bot" text="Claro, estou aqui para ajudar." />
-        <Message author="User" text="Olá!" />
-        <Message author="Bot" text="Olá! Como posso ajudá-lo hoje?" />
-        <Message author="User" text="Estou com uma dúvida sobre inglês." />
-        <Message author="Bot" text="Claro, estou aqui para ajudar." />
+        {messages.map((message, index) => (
+          <Message author={message.author} text={message.text} key={index} />
+        ))}
     </div>
   )
 }
