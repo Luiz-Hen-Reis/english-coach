@@ -16,7 +16,7 @@ export default function App() {
   const sendQuestion = async () => {
     try {
         const response = await axios.post('http://localhost:5000/chat', { question });
-        const newMessages: MessageType[] = [...messages, { author: 'User', text: question }, { author: response.data.role, text: response.data.content }]
+        const newMessages: MessageType[] = [...messages, { author: 'user', text: question }, { author: response.data.role, text: response.data.text }];
         setMessages(newMessages);
         setQuestion('');
     } catch (error) {
