@@ -64,3 +64,5 @@ English Coach is an application developed to enhance your language skills in ano
     ```bash
     npm start
     ```
+    
+9. Open your browser and go to http://localhost:3000/ to view the project in action.
